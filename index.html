@@ -70,104 +70,114 @@ const questions = [
   {
     q: "Do you watch the WSL?",
     answers: [
-      { text: "Yes, every event and every heat", value: 5 },
-      { text: "Yes, but only for specific surfers", value: 3 },
-      { text: "I'll only watch finals day", value: 2 },
-      { text: "If it's pumping I'll watch a heat or two", value: 1 },
-      { text: "F**k the WSL", value: 0 }
+      { text: "Never", value: 0 },
+      { text: "Sometimes", value: 1 },
+      { text: "Occasionally", value: 2 },
+      { text: "Often", value: 3 },
+      { text: "Always, every heat", value: 5 }
     ]
   },
   {
     q: "Where do you usually buy your boards?",
     answers: [
-      { text: "On Craigslist, OfferUp, FB Marketplace, etc.", value: 2 },
-      { text: "Fresh off the rack at the local surf shop", value: 5 },
-      { text: "Buy used but from a retail shop", value: 4 },
+      { text: "I shape my own boards", value: 0 },
       { text: "From a friend who is a shaper", value: 1 },
-      { text: "I shape my own boards", value: 0 }
+      { text: "Used from a retail shop", value: 2 },
+      { text: "New from local surf shop", value: 3 },
+      { text: "Brand new, hype boards only", value: 5 }
     ]
   },
   {
-    q: "You pull up to the beach and the waves are all-time. Your buddy asks how it looks. What's your response?",
+    q: "Your buddy asks how the waves look when you arrive at the beach. Your response?",
     answers: [
-      { text: "'Waves seem pretty fun! We're out there!'", value: 3 },
-      { text: "'Looks decent. Couple fun ones here and there'", value: 2 },
-      { text: "Ignore his text and paddle out by yourself (why surf with a crowd?)", value: 0 },
-      { text: "'Dude... fucking all-time out there, barrels left and right. We're going to score!'", value: 4 },
-      { text: "Tell your buddy (and every other surf groupchat you're in) that it's on and post a story of the spot on Instagram before suiting up", value: 5 }
+      { text: "Ignore and paddle out solo", value: 0 },
+      { text: "Looks okay, I'll go surf", value: 1 },
+      { text: "Waves seem fun!", value: 2 },
+      { text: "All-time, barrels everywhere!", value: 3 },
+      { text: "Post on IG first, tell everyone it's on!", value: 5 }
     ]
   },
   {
-    q: "You forgot a leash and the waves are firing. What do you do?",
+    q: "You forgot a leash and waves are firing. What do you do?",
     answers: [
-      { text: "Paddle out without one", value: 1 },
-      { text: "Turn around and head home to grab one", value: 2 },
-      { text: "Go to the surf shop across the street and buy a new one", value: 5 },
-      { text: "Ask a stranger if you can borrow a leash", value: 4 },
-      { text: "You didn't forget because you don't wear a leash anyways", value: 0 }
+      { text: "Go out anyway without leash", value: 0 },
+      { text: "Skip session", value: 1 },
+      { text: "Borrow a leash", value: 2 },
+      { text: "Buy new at surf shop", value: 3 },
+      { text: "Panic and take selfies before deciding", value: 5 }
     ]
   },
   {
-    q: "Have you ever posted clips of yourself on Instagram?",
+    q: "Have you ever posted surf clips on Instagram?",
     answers: [
-      { text: "No, I’m allergic to cameras", value: 1 },
-      { text: "I'll post a story from time to time", value: 3 },
-      { text: "Of course! I love posting clips", value: 4 },
-      { text: "If I get a sick one then maybe", value: 2 },
-      { text: "What the fuck is an Instagram?", value: 0 }
+      { text: "Never", value: 0 },
+      { text: "Rarely", value: 1 },
+      { text: "Sometimes", value: 2 },
+      { text: "Often", value: 3 },
+      { text: "All the time", value: 5 }
     ]
   },
   {
     q: "What's your etiquette knowledge?",
     answers: [
-      { text: "Flawless. You teach groms the rules.", value: -2 },
-      { text: "Decent. You try.", value: 0 },
-      { text: "What etiquette?", value: 3 }
+      { text: "Flawless, I teach others", value: 0 },
+      { text: "Pretty good, I try", value: 1 },
+      { text: "Average", value: 2 },
+      { text: "Barely know it", value: 3 },
+      { text: "No idea, do what I want", value: 5 }
     ]
   },
   {
-    q: "How do you talk about surfing?",
+    q: "How often do you talk about surfing?",
     answers: [
-      { text: "Rarely, unless someone asks", value: -1 },
-      { text: "A normal amount", value: 0 },
-      { text: "Constantly. Even to non-surfers.", value: 3 }
+      { text: "Rarely", value: 0 },
+      { text: "Sometimes", value: 1 },
+      { text: "Occasionally", value: 2 },
+      { text: "Often", value: 3 },
+      { text: "Constantly, even to non-surfers", value: 5 }
     ]
   },
   {
     q: "What's your surf fashion vibe?",
     answers: [
-      { text: "Old faded boardshorts, sun-bleached hat", value: -2 },
-      { text: "Whatever’s clean", value: 0 },
-      { text: "Fresh fit every session. Matching wetsuit & leash.", value: 3 }
+      { text: "Old boardshorts, sun-bleached hat", value: 0 },
+      { text: "Clean but simple", value: 1 },
+      { text: "Decent setup, matching gear", value: 2 },
+      { text: "Stylish, trendy every session", value: 3 },
+      { text: "Matching wetsuit, leash, and stickers", value: 5 }
     ]
   },
   {
     q: "How do you choose where to sit in the lineup?",
     answers: [
-      { text: "Observe the spot, respect the locals, position smartly", value: -2 },
-      { text: "Sit near the pack", value: 1 },
-      { text: "Paddle straight to the peak *first day there*", value: 4 }
+      { text: "Observe, respect locals", value: 0 },
+      { text: "Sit near others", value: 1 },
+      { text: "Somewhat aggressive positioning", value: 2 },
+      { text: "Paddle to peak immediately", value: 3 },
+      { text: "Push everyone out of the way", value: 5 }
     ]
   },
   {
-    q: "What’s your relationship with soft tops?",
+    q: "What's your relationship with soft tops?",
     answers: [
-      { text: "Fun for messing around only", value: 0 },
-      { text: "My primary board", value: 3 },
-      { text: "Pipeline soft-top warrior (or want to be)", value: 5 }
+      { text: "Never use them", value: 0 },
+      { text: "Occasionally for fun", value: 1 },
+      { text: "Use sometimes as main board", value: 2 },
+      { text: "Frequently ride soft tops", value: 3 },
+      { text: "Soft-top warrior, always riding", value: 5 }
     ]
   }
 ];
 
-// Render the questions
+// Render questions
 const container = document.getElementById("questions");
 
 questions.forEach((qObj, i) => {
   const div = document.createElement("div");
   div.className = "question";
 
-  let options = qObj.answers
-    .map((a) => `<option value="${a.value}">${a.text}</option>`)
+  const options = qObj.answers
+    .map(a => `<option value="${a.value}">${a.text}</option>`)
     .join("");
 
   div.innerHTML = `
@@ -177,14 +187,12 @@ questions.forEach((qObj, i) => {
       ${options}
     </select>
   `;
-
   container.appendChild(div);
 });
 
-// Scoring
+// Calculate score
 function calculateScore() {
   let total = 0;
-
   for (let i = 0; i < questions.length; i++) {
     const val = document.getElementById(`q${i}`).value;
     if (!val) {
@@ -195,17 +203,16 @@ function calculateScore() {
   }
 
   let message = "";
-
-  if (total <= -5) {
-    message = "🏄‍♂️ **CORE LORD** — You are the reef-scarred, dawn-patrolling, etiquette-enforcing hero the lineup needs.";
-  } else if (total <= 10) {
-    message = "😎 **Mostly Core** — A few kooky habits, but still respected in most lineups.";
+  if (total <= 10) {
+    message = "🏄‍♂️ CORE LORD — Perfect etiquette, respectful, and solid in the lineup.";
   } else if (total <= 20) {
-    message = "🌀 **Balanced Kook** — A walking contradiction: part shredder, part hazard.";
+    message = "😎 Mostly Core — Some kooky habits, but still respected.";
   } else if (total <= 30) {
-    message = "🌊 **Advanced Kook** — Soft-top energy radiates from your soul. You scare locals a little.";
+    message = "🌀 Balanced Kook — A mix of shredder and kook energy.";
+  } else if (total <= 40) {
+    message = "🌊 Advanced Kook — Locals may be wary of your antics.";
   } else {
-    message = "🚨 **MEGA KOOK** — You are a one-person closeout. Costco should sponsor you.";
+    message = "🚨 MEGA KOOK — Chaos incarnate in the lineup. Beware!";
   }
 
   const results = document.getElementById("results");
