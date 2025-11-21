@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kook vs. Core Lord Test</title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#f3f6fa; margin:0; padding:20px; }
+    h1 { text-align:center; margin-bottom:30px; }
+    .question { background:white; padding:15px; margin-bottom:10px; border-radius:8px; }
+    button { padding:15px 20px; font-size:18px; border:none; border-radius:8px; cursor:pointer; }
+    #results { margin-top:30px; font-size:22px; background:white; padding:20px; border-radius:8px; display:none; }
+  </style>
+</head>
+<body>
+
+<h1>Surf Kook vs. Core Lord Test</h1>
+
+<div id="questions"></div>
+
+<div style="text-align:center; margin-top:20px;">
+  <button onclick="calculateScore()">Submit Test</button>
+</div>
+
+<div id="results"></div>
+
+<script>
+// Questions
+const questions = [
+  "Have you ever dropped in on someone and pretended you didn't see them?",
+  "Have you ever worn a surf hat with a chin strap?",
+  "Do you claim your waves (throw hands up, hoot loudly)?",
+  "Have you ridden a Wavestorm after your first year of surfing?",
+  "Do you snake friends... or strangers?",
+  "Have you ever posted a surf clip where you didn't make the wave?",
+  "Do you film every session?",
+  "Do you surf with AirPods?",
+  "Have you ever said: 'Bro, the waves were so good yesterday'?",
+  "Have you ever surfed in a full suit when everyone else is trunking?",
+  "Have you ever paddled straight to the peak your first time at a new spot?",
+  "Do you ditch your board instead of duck diving?",
+  "Have you surfed a crowded tourist spot by choice?",
+  "Have you ever called 2–3ft waves 'pumping'?",
+  "Do you surf only point breaks because beach breaks are 'too heavy'?",
+  "Have you ever asked 'who has right of way?' mid-wave?",
+  "Have you ever pearled on takeoff more than once in one session?",
+  "Have you ever ridden a soft-top at Pipeline (or wanted to)?",
+  "Do you ask strangers what board you should buy?",
+  "Have you ever yelled 'Yewww!' after someone else’s mediocre wave?",
+  "Have you ever paddled for a wave you clearly weren’t going to catch?",
+  "Do you ride boards with volume way above your level?",
+  "Do you ask locals where the 'secret spots' are?",
+  "Do you wear booties in warm water?",
+  "Have you ever taken a GoPro mouth mount selfie?",
+  "Have you ever called your surfboard a 'stick' unironically?",
+  "Do you post 'sunset surf' pictures with no surfing in them?",
+  "Do you say “It’s too crowded to surf” and go home?",
+  "Have you ever paddled out without checking the conditions?",
+  "Do you talk more about surfing than you actually surf?"
+];
+
+// Render Questions
+const container = document.getElementById("questions");
+
+questions.forEach((q, i) => {
+  const div = document.createElement("div");
+  div.className = "question";
+  div.innerHTML = `
+    <p><strong>${i+1}.</strong> ${q}</p>
+    <label><input type="checkbox" id="q${i}" /> Yes, that's me</label>
+  `;
+  container.appendChild(div);
+});
+
+// Calculate Score
+function calculateScore() {
+  let score = 0;
+
+  questions.forEach((_, i) => {
+    if (document.getElementById(`q${i}`).checked) {
+      score++;
+    }
+  });
+
+  let message = "";
+
+  if (score <= 5) {
+    message = "🏄‍♂️ **Certified Core Lord** — You probably wax rails for fun and bully groms at your local.";
+  } else if (score <= 12) {
+    message = "🏄‍♂️ **Pretty Core, Slightly Sus** — You've got some kook tendencies but still respected.";
+  } else if (score <= 20) {
+    message = "🌀 **Intermediate Kook** — You say ‘dude’ too much and drop in sometimes.";
+  } else if (score <= 26) {
+    message = "🌊 **Advanced Kook** — You have no idea why people are glaring at you in the lineup.";
+  } else {
+    message = "🚨 **Mega Kook Alert** — You are a danger to yourself and others. Please return your surfboard.";
+  }
+
+  const results = document.getElementById("results");
+  results.style.display = "block";
+  results.innerHTML = `<strong>Your Score: ${score} / ${questions.length}</strong><br><br>${message}`;
+}
+</script>
+
+</body>
+</html>
