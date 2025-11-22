@@ -212,7 +212,36 @@
       { text: "I haven't waxed my board in months", value: 0 }
     ]
   },
-
+  {
+    q: "One of your coworkers just started surfing and wants your advice. They ask what your favorite spot is around town and seem deadset on paddling out on the regular. What do you do?",
+    answers: [
+      { text: "Tell them a couple of spots your frequent, but don't go into too much detail", value: 3 },
+      { text: "Give a mysterious answer like 'Depends on the day. I let the waves decide for me'", value: 2 },
+      { text: "Describe your local in detail and send them directions on how to get there", value: 5 },
+      { text: "Lie and tell them you surf at a beginner beach", value: 1 },
+      { text: "Report them to HR for asking too personal of a question", value: 0 }
+    ]
+  },
+  {
+    q: "Thoughts on GoPros?",
+    answers: [
+      { text: "I own one but don't use it for surfing", value: 0 },
+      { text: "I'll crash out if I see someone with a GoPro in the water", value: 0 },
+      { text: "Everyone wants to be Nathan Florence, huh?", value: 1 },
+      { text: "I'll maybe use one when it's pumping", value: 3 },
+      { text: "GoPros are sick! I bring it out for most sessions", value: 4 }
+    ]
+  },
+  {
+    q: "Do you know who this is?",
+    answers: [
+      { text: "", value: 1 },
+      { text: "Fu Wax", value: 2 },
+      { text: "Sex Wax", value: 1 },
+      { text: "Don't really care", value: 1 },
+      { text: "I haven't waxed my board in months", value: 0 }
+    ]
+  },
   {
     q: "After rolling right out of bed for dawn patrol, what clothes are you putting on to go and check the surf?",
     answers: [
@@ -223,7 +252,6 @@
       { text: "I'll change into my suit at home to save time", value: 5 }
     ]
   },
-
   {
     q: "Do you know the name of this tool?",
     answers: [
@@ -234,7 +262,6 @@
       { text: "I thought Milwaukee was a city?", value: 5 }
     ]
   },
-
   {
     q: "How are do you typically fund your surf trips?",
     answers: [
@@ -245,7 +272,6 @@
       { text: "I don't travel. My local is enough for me.", value: 0 }
     ]
   },
-
   {
     q: "Which of the following do you check first for a surf report?",
     answers: [
@@ -256,7 +282,6 @@
       { text: "I tell my friends I'm checking it, take 20 minutes loading up my car, and hope that they get to the beach before me and give me a report", value: 5 }
     ]
   },
-
   {
     q: "You got stuck in the middle seat for a 12+ hour flight. Absolutely brutal. Good news is you're stuck between two pro surfers. Who would you want to sit in-between?",
     answers: [
@@ -267,7 +292,6 @@
       { text: "Clay Marzo and Mason Ho", value: 0 }
     ]
   },
-
   {
     q: "If there are no waves on the weekend, what are you doing instead?",
     answers: [
@@ -308,7 +332,7 @@
       for (let i = 0; i < questions.length; i++) {
         const selected = document.querySelector(`input[name="q${i}"]:checked`);
         if (!selected) {
-          alert("Please answer all questions before shredding your score 🤙");
+          alert("Please answer all questions before clicking submit 🤙");
           return;
         }
         total += Number(selected.value);
