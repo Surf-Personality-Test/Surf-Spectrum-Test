@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>🌊 Your Surf Spectrum Score 🌊</title>
+
+<style>
+  body {
+    font-family: "Trebuchet MS", sans-serif;
+    background: linear-gradient(to bottom right, #b5e8ff, #87d4ff);
+    margin: 0;
+    padding: 20px;
+    color: #003f55;
+    text-align: center;
+  }
+
+  h1 {
+    font-family: "Papyrus", "Brush Script MT", "Trebuchet MS", cursive;
+    font-size: 40px;
+    color: #004b6b;
+    text-shadow: 1px 1px 0px white;
+    margin-bottom: 15px;
+  }
+
+  #score-box {
+    background: rgba(255, 255, 255, 0.9);
+    max-width: 700px;
+    margin: 25px auto;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #9ed8f7;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.15);
+  }
+
+  #result-text {
+    font-size: 22px;
+    margin-top: 20px;
+  }
+
+  .score-number {
+    font-size: 55px;
+    font-weight: bold;
+    color: #005e99;
+    text-shadow: 1px 1px white;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  button {
+    margin-top: 35px;
+    padding: 14px 24px;
+    font-size: 18px;
+    border: none;
+    border-radius: 12px;
+    background: #0077c2;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+  }
+
+  button:hover {
+    background: #005e99;
+    transform: scale(1.03);
+  }
+</style>
+</head>
+
+<body>
+
+<h1>🌊 Your Surf Spectrum Score 🌊</h1>
+
+<div id="score-box">
+  <div id="score-output" class="score-number"></div>
+  <div id="result-text"></div>
+
+  <a href="index.html">
+    <button>Take the Test Again</button>
+  </a>
+</div>
+
+<script>
+  // Read the score from URL
+  const params = new URLSearchParams(window.location.search);
+  const score = Number(params.get("score"));
+
+  const scoreOutput = document.getElementById("score-output");
+  const resultText = document.getElementById("result-text");
+
+  scoreOutput.textContent = score;
+
+  // Determine category
+  let message = "";
+
+  if (score <= 5) {
+    message = "🏄‍♂️ <strong>CORE LORD</strong><br>You are the reef-scarred, dawn-patrolling truth. The lineup respects you.";
+  } 
+  else if (score <= 15) {
+    message = "😎 <strong>Mostly Core</strong><br>You’ve got a couple kooky traits, but overall you hold your own.";
+  } 
+  else if (score <= 25) {
+    message = "🌀 <strong>Balanced Kook</strong><br>A perfect blend of stylish turns and questionable life choices.";
+  } 
+  else if (score <= 35) {
+    message = "🌊 <strong>Advanced Kook</strong><br>You radiate soft-top energy. Locals are slightly concerned.";
+  } 
+  else {
+    message = "🚨 <strong>MEGA KOOK</strong><br>You are a one-man closeout. Costco should sponsor you immediately.";
+  }
+
+  resultText.innerHTML = message;
+</script>
+
+</body>
+</html>
