@@ -125,121 +125,120 @@
    {
     q: "Do you watch the WSL?",
     answers: [
-      { text: "Yes, every event and every heat", value: 5 },
-      { text: "Yes, but only for specific surfers", value: 2 },
-      { text: "I'll only watch finals day", value: 2 },
-      { text: "If it's pumping I'll watch a heat or two", value: 1 },
-      { text: "F**k the WSL", value: 0 }
+      { text: "Yes, every event and every heat", type: ["Total Kook", "Adult Learner", "Surf Nerd", "Corporate Drone", "Grom"] },
+      { text: "Yes, but only for specific surfers", type: ["Surf Nerd", "Grom", "Corporate Drone"] },
+      { text: "I'll only watch finals day", type: ["Weekend Warrior", "Corporate Drone", "Soul Surfer", "Aspiring Regulator"] },
+      { text: "If it's pumping I'll watch a heat or two", type: ["Leatherbacked Local", "Soul Surfer", "Aspiring Regulator"] },
+      { text: "F**k the WSL", type: ["Core Lord", "Aspiring Regulator"] }
     ]
   },
   {
     q: "Where do you usually buy your boards?",
     answers: [
-      { text: "On Craigslist, OfferUp, FB Marketplace, etc.", value: 2 },
-      { text: "Fresh off the rack at the local surf shop", value: 4 },
-      { text: "Buy used but from a retail shop", value: 3 },
-      { text: "From a friend who is a shaper", value: 1 },
-      { text: "I shape my own boards", value: 0 }
+      { text: "Craigslist, OfferUp, FB Marketplace, etc.", type: ["Grom", "Soul Surfer", "Weekend Warrior", "Aspiring Regulator"] },
+      { text: "Fresh off the rack at the local surf shop", type: ["Total Kook", "Corporate Drone", "Adult Learner", "Surf Nerd"] },
+      { text: "Buy used but from a retail shop", type: ["Weekend Warrior", "Adult Learner", "Corporate Drone"] },
+      { text: "From a friend who is a shaper", type: ["Aspiring Regulator", "Core Lord", "Leatherbacked Local"] },
+      { text: "I shape my own boards", type: ["Surf Nerd", "Core Lord", "Leatherbacked Local"] }
     ]
   },
   {
     q: "You pull up to the beach and the waves are all-time. Your buddy asks how it looks. What's your response?",
     answers: [
-      { text: "Waves are sick! We're out there!", value: 2 },
-      { text: "Looks decent. Couple fun ones here and there", value: 1 },
-      { text: "Ignore his text and paddle out by yourself. Why surf with a crowd?", value: 0 },
-      { text: "Dude... fucking all-time out there, barrels left and right. We're going to score!", value: 4 },
-      { text: "Tell your buddy (and every other surf groupchat you're in) that it's on, then post a story of the spot on Instagram before suiting up", value: 5 }
+      { text: "Waves are sick! We're out there!", type: ["Soul Surfer", "Weekend Warrior", "Adult Learner"] },
+      { text: "Looks decent. Couple fun ones here and there", type: ["Letherbacked Local", "Surf Nerd", "Aspiring Regulator"] },
+      { text: "Ignore his text and paddle out by yourself. Why surf with a crowd?", type: ["Aspiring Regulator", "Core Lord"] },
+      { text: "Dude... fucking all-time out there, barrels left and right. We're going to score!", type: ["Grom", "Adult Learner", "Corporatr Drone"] },
+      { text: "Tell your buddy (and every other surf groupchat you're in) that it's on, then post a story of the spot on Instagram before suiting up", type: ["Corporate Drone", "Total Kook", "Grom"] }
     ]
   },
   {
     q: "You forgot a leash and the waves are firing. What do you do?",
     answers: [
-      { text: "Paddle out without one", value: 1 },
-      { text: "Turn around and head home to grab one", value: 3 },
-      { text: "Go to the surf shop across the street and buy a new one", value: 5 },
-      { text: "Ask a stranger if you can borrow a leash", value: 3 },
-      { text: "You didn't forget because you dont wear a leash anyways", value: 0 }
+      { text: "Paddle out without one", type: ["Aspiring Regulator", "Soul Surfer", "Weekend Warrior"] },
+      { text: "Turn around and head home to grab one", type: ["Corporate Drone", "Adult Learner" },
+      { text: "Go to the surf shop across the street and buy a new one", type: ["Surf Nerd", "Corporate Drone", "Total Kook"] },
+      { text: "Ask a stranger if you can borrow a leash", type: ["Grom", "Total Kook"] },
+      { text: "You didn't forget one because you don't wear a leash anyways", type: ["Leatherbacked Local", "Core Lord"] }
     ]
   },
   {
     q: "Do you post clips on Instagram?",
     answers: [
-      { text: "No, I hate seeing myself surf", value: 3 },
-      { text: "I'll post some but only if I'm getting tubed", value: 1 },
-      { text: "Of course! I even have story highlight on my profile of all my clips", value: 4 },
-      { text: "I have but it's rare", value: 2 },
-      { text: "What the fuck is an Instagram?", value: 1 }
+      { text: "No, I hate seeing myself surf", type: ["Surf Nerd", "Adult Learner", "Aspiring Regulator", "Core Lord"] },
+      { text: "Only if I'm getting tubed", type: ["Aspiring Regulator", "Surf Nerd"] },
+      { text: "Of course! I even have a highlight reel on my profile", type: ["Total Kook", "Grom"] },
+      { text: "I'll post something if I go on a trip", type: ["Soul Surfer", "Corporate Drone", "Surf Nerd", "Adult Learner", "Weekend Warrior"] },
+      { text: "What the fuck is an Instagram?", type: ["Leatherbacked Local", "Core Lord"] }
     ]
   },
   {
     q: "Do you stretch before you surf?",
     answers: [
-      { text: "Never have, never will", value: 1 },
-      { text: "The only 'Stretch' I know is William Riedel", value: 0 },
-      { text: "If I'm feeling sore then maybe for a couple minutes", value: 3 },
-      { text: "Yeah I'll swing my arms around a bit but that's it", value: 1 },
-      { text: "I do a 20 minute routine on beach before every session", value: 5 }
+      { text: "Never have, never will", type: ["Aspiring Regulator", "Core Lord", "Grom"] },
+      { text: "The only 'Stretch' I know is William Riedel", type: ["Core Lord", "Surf Nerd"] },
+      { text: "No, but if I'm feeling sore then maybe I'll swing my arms around a bit", type: ["Aspiring Regulator", "Weekend Warrior"] },
+      { text: "My morning yoga flow was enough stretching for me", type: ["Soul Surfer", "Leatherbacked Local"]
+      { text: "I do a 20 minute routine on beach before every session", type: ["Adult Learner", "Coporate Drone", "Total Kook"] }
     ]
   },
   {
-    q: "You're surfing 22nd all by yourseld on a Tuesday at noon (it's shitty per usual) and somebody paddles out to the peak you're sitting on. You're immediate response is to...",
+    q: "You're surfing 22nd all by yourseld on a Tuesday at noon (it's shitty per usual) and somebody paddles out to the peak you're sitting on. Your immediate response is to...",
     answers: [
-      { text: "Say what's up and make small talk", value: 3 },
-      { text: "Greet with a subtle nod", value: 2 },
-      { text: "Do nothing, mind your own business", value: 2 },
-      { text: "Ask him why he picked this peak when the entire beach is empty", value: 0 },
-      { text: "Repeatedly paddle within inches of him and refuse to acknowledge his presence until he finally goes for a wave, prompting you to hurl every slur under the sun at him until he gets out of the water", value: 4 }
+      { text: "Say what's up and make small talk", type: ["Soul Surfer", "Adult Learner","Leatherbacked Local", "Grom"] },
+      { text: "Greet with a subtle nod", type: ["Surf Nerd", "Leatherbacked Local", "Soul Surfer"] },
+      { text: "Do nothing, mind your own business", type: ["Grom", "Total Kook", "Aspiring Regulator"] },
+      { text: "Tuesday at noon? I'd be at work", type: ["Corporate Drone", "Weekend Warrior"] },
+      { text: "Ask him why he picked this peak when the entire beach is empty. Then, repeatedly paddle within inches of him and refuse to acknowledge his presence until he finally goes for a wave, prompting you to hurl every slur under the sun at him until he gets out of the water", type: ["Core Lord", "Aspiring Regulator"] }
     ]
   },
   {
     q: "There's a gun to your wife and kids' heads and the only way to save them is if a pro surfer of your choice can land an air. Who are you picking?",
     answers: [
-      { text: "Gabriel Medina", value: 4 },
-      { text: "Matt Meola", value: 2 },
-      { text: "John John Florence", value: 3 },
-      { text: "Chippa Wilson", value: 1 },
-      { text: "You think I'll ever have a wife and kids? Get real.", value: 0 }
+      { text: "Kelly Slater", type: ["Adult Learner","Weekend Warrior", "Total Kook"] },
+      { text: "John John Florence", type: ["Adult Learner", "Corporate Drone", "Total Kook"] },
+      { text: "Matt Meola", type: ["Aspiring Regulator", "Surf Nerd", "Soul Surfer"]  },
+      { text: "Noa Deane", type: ["Core Lord", "Soul Surfer", "Aspiring Regulator"] },
+      { text: "You think I have a wife and kids? Get real.", type: ["Grom", "Leatherbacked Local"] }
     ]
   },
   {
     q: "What's your go-to wax for your boards?",
     answers: [
-      { text: "Sticky Bumps", value: 1 },
-      { text: "Fu Wax", value: 2 },
-      { text: "Sex Wax", value: 1 },
-      { text: "Don't really care", value: 1 },
-      { text: "I haven't waxed my board in months", value: 0 }
+      { text: "Sticky Bumps", type: ["Core Lord", "Aspiring Regulator", "Soul Surfer", "Weekend Warrior"] },
+      { text: "Fu Wax", type: ["Surf Nerd", "Corporate Drone" },
+      { text: "Sex Wax", type: ["Core Lord", "Aspiring Regulator", "Soul Surfer", "Weekend Warrior"] },
+      { text: "Whatever my buddy has. I always forget wax.", type: ["Adult Learner", "Grom"] }
+      { text: "I haven't waxed my board in months", type: ["Total Kook", "Leatherbacked Local"] }
     ]
   },
   {
     q: "One of your coworkers just started surfing and wants your advice. They ask what your favorite spot is around town and seem deadset on paddling out on the regular. What do you do?",
     answers: [
-      { text: "Tell them a couple of spots your frequent, but don't go into too much detail", value: 3 },
-      { text: "Give a mysterious answer like 'Depends on the day. I let the waves decide for me'", value: 2 },
-      { text: "Describe your local in detail and send them directions on how to get there", value: 5 },
-      { text: "Lie and tell them you surf at a beginner beach", value: 1 },
-      { text: "Report them to HR for asking too personal of a question", value: 0 }
+      { text: "Tell them a couple of spots your frequent, but don't go into too much detail", type: ["Adult Learner", "Weekend Warrior", "Soul Surfer", "] },
+      { text: "Give a mysterious answer like 'Depends on the day. I let the waves decide for me'", type: ["Soul Surfer", "Leatherbacked Local", "Total Kook"] },
+      { text: "Describe your local in detail and send them directions on how to get there", type: ["Total Kook", "Corporate Drone", "Adult Learner"] },
+      { text: "Lie and tell them you surf at a beginner beach", type: ["Grom", "Aspiring Core Lord", "Surf Nerd"] },
+      { text: "Report them to HR for asking too personal of a question", type: ["Core Lord"] }
     ]
   },
   {
     q: "Thoughts on GoPros?",
     answers: [
-      { text: "I own one but don't use it for surfing", value: 0 },
-      { text: "I'll crash out if I see someone with a GoPro in the water", value: 0 },
-      { text: "Everyone wants to be Nathan Florence, huh?", value: 1 },
-      { text: "I'll maybe use one when it's pumping", value: 3 },
-      { text: "GoPros are sick! I bring it out for most sessions", value: 4 }
+      { text: "I own one but don't use it for surfing", type: ["Aspiring Regulator", "Weekend Warrior", "Soul Surfer", "Corporate Drone", "Grom"] },
+      { text: "I'll crash out if I see someone with a GoPro in the water", type: ["Leatherbacked Local", "Core Lord"] },
+      { text: "Everyone wants to be Nathan Florence, huh?", type: ["Core Lord", "Aspiring Regulator"] }
+      { text: "I'll bring one on a trip but don't use it often" type: ["Adult Learner", "Coporate Drone", "Grom", "Surf Nerd", "Weekend Warrior", "Soul Surfer", "Total Kook"] }
+      { text: "GoPros are sick! I bring it out for most sessions", type: ["Weekend Warrior", "Corporate Drone", "Total Kook", "Surf Nerd", "Grom"  }
     ]
   },
   {
     q: "Do you know who this is?",
     answers: [
-      { text: "", value: 1 },
-      { text: "Fu Wax", value: 2 },
-      { text: "Sex Wax", value: 1 },
-      { text: "Don't really care", value: 1 },
-      { text: "I haven't waxed my board in months", value: 0 }
+      { text: "Yes I do", value: 0 },
+      { text: "Looks familiar but don't know his name", value: 3 },
+      { text: "No idea", value: 4 },
+      { text: "Yes (but only after a Google search)", value: 4 },
     ]
   },
   {
@@ -249,57 +248,76 @@
       { text: "Some jeans and a crusty flannel", value: 2 },
       { text: "T-shirt and trunks (that you slept in so no need to change)", value: 1 },
       { text: "Vuori sweats and a Patagonia jacket", value: 4 },
-      { text: "I'll change into my suit at home to save time", value: 5 }
+      { text: "I change into my suit at home to save time", value: 5 }
     ]
   },
   {
     q: "Do you know the name of this tool?",
     answers: [
-      { text: "Of course", value: 0 },
-      { text: "Zero idea", value: 3 },
-      { text: "Yes, some kind of sander", value: 3 },
-      { text: "No, I rarely use power tools", value: 4 },
-      { text: "I thought Milwaukee was a city?", value: 5 }
+      { text: "Of course", type: ["Aspiring Regulator", "Core Lord", "Surf Nerd", "Leatherbacked Local", "Weekend Warrior"]  },
+      { text: "No clue", type: ["Grom", "Corporate Drone", "Adult Learner", "Soul Surfer" },
+      { text: "Some kind of sander", type: ["Weekend Warrior", "Corporate Drone", "Adult Learner", "Soul Surfer", "Total Kook"] }
+      { text: "No, I rarely use power tools", type: ["Corporate Drone", "Grom", "Adult Learner", "Soul Surfer"] },
+      { text: "I thought Milwaukee was a city?", type: ["Total Kook", "Corporate Drone" }
     ]
   },
   {
     q: "How are do you typically fund your surf trips?",
     answers: [
-      { text: "I work a corporate 9-to-5 and save a little on the side", value: 3 },
-      { text: "I'll pick up double shifts at the steel mill", value: 1 },
-      { text: "My parents pay for my trips", value: 5 },
-      { text: "By maxing out credit cards", value: 2 },
-      { text: "I don't travel. My local is enough for me.", value: 0 }
+      { text: "I work a corporate 9-to-5 and save a little on the side", type: ["Weekend Warrior", "Soul Surfer", "Corporate Drone", "Adult Learner", "Surf Nerd"] },
+      { text: "I'll pick up double shifts at the steel mill", type: ["Weekend Warrior", "Leatherbacked Local", "Core Lord"] },
+      { text: "My parents pay for my trips", type: ["Grom", "Corporate Drone", "Adult Learner", "Soul Surfer", "Total Kook"] },
+      { text: "By maxing out credit cards", type: ["Core Lord", "Aspiring Regulator", "Surf Nerd"  },
+      { text: "I don't travel, my local is enough for me", type: ["Leatherbacked Local", "Core Lord", "Aspiring Regulator", "Grom"] }
     ]
   },
   {
-    q: "Which of the following do you check first for a surf report?",
+    q: "Which of the following do you check for a surf report?",
     answers: [
-      { text: "Head to the beach and see for myself", value: 2 },
-      { text: "Surfline, Windy, Magic Seaweed, etc.", value: 3 },
-      { text: "NWR/NOAA radio frequencies", value: 1 },
-      { text: "I don't care, I'm out there regardless", value: 3 },
-      { text: "I tell my friends I'm checking it, take 20 minutes loading up my car, and hope that they get to the beach before me and give me a report", value: 5 }
+      { text: "Head to the beach and see for myself", type: ["Leatherbacked Local", "Grom", "Aspiring Regulator", "Core Lord"] },
+      { text: "Surfline, Windy, Magic Seaweed, etc.", type: ["Surf Nerd", "Adult Learner", "Corporate Drone", "Weekend Warrior", "Soul Surfer"] },
+      { text: "NWR/NOAA radio frequencies", type: ["Core Lord", "Surf Nerd"] },
+      { text: "I don't care, I'm out there regardless", type: ["Leatherbacked Local", "Total Kook", "Grom", "Weekend Warrior", "Soul Surfer"] },
+      { text: "I tell my friends I'm checking it, take 20 minutes loading up my car, and hope that they get to the beach before me and give me a report", type: ["Total Kook", "Corporate Drone", " }
     ]
   },
   {
-    q: "You got stuck in the middle seat for a 12+ hour flight. Absolutely brutal. Good news is you're stuck between two pro surfers. Who would you want to sit in-between?",
+    q: "What's your ideal surf trip destination?",
     answers: [
-      { text: "Ben Gravy and Jacob Szekely", value: 5 },
-      { text: "Torren Martyn and Dave Rastovich", value: 2 },
-      { text: "Griffin Colapinto and Kolohe Andino", value: 3 },
-      { text: "Felipe Toldeo and Italo Ferreira", value: 4 },
-      { text: "Clay Marzo and Mason Ho", value: 0 }
+      { text: "North Shore, Hawaii. Welcome to Pipeline, now go home.", type: ["Leatherbacked Local", "Core Lord", "Total Kook", "Surf Nerd", "Corporate Drone", "Weekend Warrior"] },
+      { text: "Costa Rica. Central American version of 22nd but at least you're in trunks.", type: ["Adult Learner", "Corporate Drone", "Weekend Warrior", "Grom", "Soul Surfer"] },
+      { text: "Gold Coast, Australia. Plenty of point breaks, plenty of people.", type: ["Surf Nerd", "Corporate Drone", "Weekend Warrior", "Core Lord", "Aspiring Regulator"] },
+      { text: "Bali. Babes, Bintangs, Barrels, and a busted belly.", type: ["Aspiring Regulator", "Soul Surfer", "Corporate Drone", "Total Kook" },
+      { text: "Mainland Mexico. Chances of scoring? High. Chances of getting you wallet lifted? Higher.", type: ["Leatherbacked Local", "Core Lord", "Aspiring Regulator", "Soul Surfer", "Weekend Warrior"] },
     ]
   },
+  {
+    q: "As you're paddling back out after a sick one, someone shoots you a compliments. How do you react?",
+    answers: [
+      { text: "Humbly shrug it off and act like it's no big deal", value: 1 },
+      { text: "Say thanks and then go in detail about every intricacy wave (no one asked or cares)", value: 2 },
+      { text: "", value: 1 },
+      { text: "Make up an excuse like how the wave could've been better or you wish you were on a different board", value: 1 },
+      { text: "Tell them to mind their own business and scowl at them as you paddle past them", value: 1 },
+    ]
+  },
+  {
+    q: "Who did you vote for in the 2024 election?",
+    answers: [
+      { text: "Donald Trump", type: ["Leatherbacked Local", "Core Lord", "Aspiring Regulator", "Surf Nerd", "Weekend Warrior", "Corporate Drone", "Adult Learner" },
+      { text: "Kamala Harris", type: ["Soul Surfer", "Weekend Warrior", "Surf Nerd", "Adult Learner", "Total Kook"] },
+      { text: "Robert F. Kennedy Jr.", type: ["Leatherbacked Local", "Core Lord", "Total Kook"] },
+      { text: "I didn't vote.", type: ["Leatherbacked Local", "Core Lord", "Aspiring Regulator", "Soul Surfer", "Surf Nerd", "Weekend Warrior", "Corporate Drone", "Adult Learner", "Grom", "Total Kook"] },
+      { text: "Democracy is a farce", type: ["Leatherbacked Local", "Core Lord", "Total Kook"] }
+    ]
   {
     q: "If there are no waves on the weekend, what are you doing instead?",
     answers: [
-      { text: "Go to the gym or on a run", value: 3 },
-      { text: "Jump in the water anyways", value: 2 },
-      { text: "Complain about the waves being shit to anyone who will listen", value: 1 },
-      { text: "Get an early start on the six pack you were saving for after your session", value: 0 },
-      { text: "Catch up on work", value: 5 }
+      { text: "Go to the gym or on a run", type: ["Weekend Warrior", "Corporate Drone", "Adult Learner", "Total Kook", "Surf Nerd"] },
+      { text: "Jump in the water anyways", type: ["Soul Surfer", "Leatherbacked Local", "Weekend Warrior", "Grom"] },
+      { text: "Complain about the waves being shit to anyone who will listen", type: ["Core Lord", "Aspiring Regulator", "Surf Nerd"] },
+      { text: "Get an early start on the six pack you were saving for after your session", type: ["Leatherbacked Local", "Core Lord"] },
+      { text: "Catch up on work", type: ["Corporate Drone", "Adult Learner", "Total Kook" }
     ]
   }
 
