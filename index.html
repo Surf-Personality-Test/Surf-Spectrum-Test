@@ -295,11 +295,11 @@
   {
     q: "As you're paddling back out after a sick one, someone shoots you a compliments. How do you react?",
     answers: [
-      { text: "Humbly shrug it off and act like it's no big deal", value: 1 },
-      { text: "Say thanks and then go in detail about every intricacy wave (no one asked or cares)", value: 2 },
-      { text: "", value: 1 },
-      { text: "Make up an excuse like how the wave could've been better or you wish you were on a different board", value: 1 },
-      { text: "Tell them to mind their own business and scowl at them as you paddle past them", value: 1 },
+      { text: "Humbly shrug it off and act like it's no big deal", type: ["Aspiring Regulator", "Corporate Drone", "Weekend Warrior"] },
+      { text: "Say thanks and then go in detail about every intricacy wave (no one asked or cares)", type: ["Soul Surfer", "Leatherbacked Local", "Surf Nerd"] },
+      { text: "Geek out and ask them if they saw you get barrelled", type: ["Grom", "Total Kook", "Adult Learner", "Soul Surfer"] },
+      { text: "Make up an excuse like how you have't surfed in a while or you wish you were on a different board", type: ["Surf Nerd", "Aspiring Regulator", "Adult Learner", "Weekend Warrior"] },
+      { text: "Tell them to mind their own business and scowl at them as you paddle past them", type: ["Core Lord", "Aspiring Regulator"] },
     ]
   },
   {
@@ -326,43 +326,138 @@
 
     const container = document.getElementById("questions");
 
-    questions.forEach((qObj, i) => {
-      const div = document.createElement("div");
-      div.className = "question";
+<script>
+const scores = {
+  "Leatherbacked Local": 0,
+  "Core Lord": 0,
+  "Aspiring Regulator": 0,
+  "Soul Surfer": 0,
+  "Surf Nerd": 0,
+  "Weekend Warrior": 0,
+  "Corporate Drone": 0,
+  "Adult Learner": 0,
+  "Grom": 0,
+  "Total Kook": 0
+};
 
-      let answersHTML = qObj.answers
-        .map(
-          (a, j) => `
-            <div class="answer">
-              <label>
-                <input type="radio" name="q${i}" value="${a.value}"> ${a.text}
-              </label>
-            </div>`
-        )
-        .join("");
+const tiebreakerQuestion = {
+  q: "Pick your favorite surfer",
+  answers: [
+    { text: "Gerry Lopez", type: "Leatherbacked Local" },
+    { text: "Greg Noll", type: "Leatherbacked Local" },
+    { text: "Kelly Slater", type: "Adult Learner" },
+    { text: "Laird Hamilton", type: "Adult Learner" },
+    { text: "Rob Machado", type: "Soul Surfer" },
+    { text: "Dave Rastovich", type: "Soul Surfer" },
+    { text: "Craig Anderson", type: "Surf Nerd" },
+    { text: "Dane Reynolds", type: "Surf Nerd" },
+    { text: "Bobby Martinez", type: "Core Lord" },
+    { text: "Chris Ward", type: "Core Lord" },
+    { text: "Andy Irons", type: "Aspiring Regulator" },
+    { text: "Joel Parkinson", type: "Aspiring Regulator" },
+    { text: "Jamie O'Brien", type: "Grom" },
+    { text: "Mason Ho", type: "Grom" },
+    { text: "Mick Fanning", type: "Corporate Drone" },
+    { text: "John John Florence", type: "Corporate Drone" },
+    { text: "Ben Gravy", type: "Total Kook" },
+    { text: "Kale Brock", type: "Total Kook" ]
+  ]
+};
 
-      div.innerHTML = `<p><strong>${i + 1}.</strong> ${qObj.q}</p>${answersHTML}`;
-      container.appendChild(div);
-    });
+questions.forEach((qObj, i) => {
+  const div = document.createElement("div");
+  div.className = "question";
 
-    function calculateScore() {
-      let total = 0;
+  let answersHTML = qObj.answers
+    .map(
+      (a, j) => `
+        <div class="answer">
+          <label>
+            <input type="radio" name="q${i}" data-type='${JSON.stringify(a.type || [])}'> ${a.text}
+          </label>
+        </div>`
+    )
+    .join("");
 
-      for (let i = 0; i < questions.length; i++) {
-        const selected = document.querySelector(`input[name="q${i}"]:checked`);
-        if (!selected) {
-          alert("Please answer all questions before clicking submit 🤙");
-          return;
-        }
-        total += Number(selected.value);
-      }
+  div.innerHTML = `<p><strong>${i + 1}.</strong> ${qObj.q}</p>${answersHTML}`;
+  container.appendChild(div);
+});
 
-      const params = new URLSearchParams();
-      params.append("score", total);
+function calculateScore() {
+  for (let key in scores) scores[key] = 0;
 
-      window.location.href = `results.html?${params.toString()}`;
+  for (let i = 0; i < questions.length; i++) {
+    const selected = document.querySelector(`input[name="q${i}"]:checked`);
+    if (!selected) {
+      alert("Please answer all questions before clicking submit 🤙");
+      return;
     }
-  </script>
+    const types = JSON.parse(selected.dataset.type);
+    types.forEach(p => {
+      if (scores[p] !== undefined) scores[p] += 1;
+    });
+  }
+
+  let maxScore = -1;
+  let topPersonalities = [];
+  for (let key in scores) {
+    if (scores[key] > maxScore) {
+      maxScore = scores[key];
+      topPersonalities = [key];
+    } else if (scores[key] === maxScore) {
+      topPersonalities.push(key);
+    }
+  }
+
+  if (topPersonalities.length > 1) {
+    showTiebreaker(topPersonalities);
+  } else {
+    redirectResult(topPersonalities[0]);
+  }
+}
+
+function redirectResult(personality) {
+  const params = new URLSearchParams();
+  params.append("personality", personality);
+  window.location.href = `results.html?${params.toString()}`;
+}
+
+function showTiebreaker(topPersonalities) {
+  container.innerHTML = "";
+
+  const div = document.createElement("div");
+  div.className = "question";
+
+  let answersHTML = tiebreakerQuestion.answers
+    .filter(a => topPersonalities.includes(a.type))
+    .map(
+      (a, j) => `
+        <div class="answer">
+          <label>
+            <input type="radio" name="tiebreaker" data-type='${a.type}'> ${a.text}
+          </label>
+        </div>`
+    )
+    .join("");
+
+  div.innerHTML = `<p><strong>Tiebreaker:</strong> ${tiebreakerQuestion.q}</p>${answersHTML}`;
+  container.appendChild(div);
+
+  const button = document.querySelector("button");
+  button.innerText = "Submit Final Choice";
+  button.onclick = submitTiebreaker;
+}
+
+function submitTiebreaker() {
+  const selected = document.querySelector(`input[name="tiebreaker"]:checked`);
+  if (!selected) {
+    alert("Please pick your favorite surfer to determine your personality 🤙");
+    return;
+  }
+  const personality = selected.dataset.type;
+  redirectResult(personality);
+}
+</script>
 
 </body>
 </html>
